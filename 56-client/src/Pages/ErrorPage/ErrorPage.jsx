@@ -44,11 +44,11 @@ const ErrorPage = () => {
         </div>
 
         <div className="relative w-full mt-8 lg:w-1/2 lg:mt-0">
-          {/* <img
+          <img
             className=" w-full lg:h-[32rem] h-80 md:h-96 rounded-lg object-cover "
-            src="https://images.unsplash.com/photo-1613310023042-ad79320c00ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            src="../../../public/coffee-store-espresso-emporium-main/images/404/404.gif"
             alt=""
-          /> */}
+          />
         </div>
       </div>
     </section>

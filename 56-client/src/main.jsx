@@ -12,6 +12,9 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage.jsx";
 import AuthProvider from "./AuthProviders/Auth/AuthProvider.jsx";
 import UpdatePage from "./Pages/UpdatePage/UpdatePage.jsx";
 import AddPage from "./Pages/AddPage/AddPage.jsx";
+import Addpage2 from "./Pages/AddPage2/AddPage2.jsx";
+
+
 
 const router = createBrowserRouter([
   {
@@ -22,12 +25,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      }, {
+      },
+      {
         path: "/AddPage",
-        element: <AddPage/>,
-      }, {
+        element: <AddPage />,
+      },
+      {
+        path: "/Addpage2",
+        element: <Addpage2 />,
+      },
+      {
         path: "/UpdatePage",
-        element: <UpdatePage/>,
+        element: <UpdatePage />,
       },
       {
         path: "/Login",

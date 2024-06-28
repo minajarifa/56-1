@@ -10,6 +10,8 @@ const Header = () => {
       </li>
       <li>
         <Link to="/AddPage">AddPage</Link>
+      </li><li>
+        <Link to="/Addpage2">Addpage2</Link>
       </li>
       <li>
         <Link to="/UpdatePage">UpdatePage</Link>
@@ -80,7 +82,9 @@ const Header = () => {
               {user ? (
                 <>
                   <li>
-                    <a className="text-red-400" onClick={handleLogOut}>Logout</a>
+                    <a className="text-red-400" onClick={handleLogOut}>
+                      Logout
+                    </a>
                     <h1>{user?.displayName}</h1>
                     <h1>{user?.email}</h1>
                   </li>
