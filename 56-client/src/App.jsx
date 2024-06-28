@@ -6,11 +6,13 @@ import Footer from "./Layout/Footer/Footer";
 function App() {
   return (
     <>
+      <div className=" font-bold">
       <div className="mx-20 md:mx-36">
-        <Header />
-        <Outlet />
+        <Header/>
+        <Outlet/>
       </div>
-      <Footer />
+      <Footer/>
+      </div>
     </>
   );
 }

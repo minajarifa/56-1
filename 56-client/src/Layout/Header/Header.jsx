@@ -3,6 +3,19 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProviders/Auth/AuthProvider";
 
 const Header = () => {
+  const navLinks = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/AddPage">AddPage</Link>
+      </li>
+      <li>
+        <Link to="/UpdatePage">UpdatePage</Link>
+      </li>
+    </>
+  );
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
@@ -37,27 +50,13 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-
-              <li>
-                <a>Item 3</a>
-              </li>
+              {navLinks}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
           {/* image button start */}
@@ -81,7 +80,9 @@ const Header = () => {
               {user ? (
                 <>
                   <li>
-                    <a onClick={handleLogOut}>Logout</a>
+                    <a className="text-red-400" onClick={handleLogOut}>Logout</a>
+                    <h1>{user?.displayName}</h1>
+                    <h1>{user?.email}</h1>
                   </li>
                 </>
               ) : (

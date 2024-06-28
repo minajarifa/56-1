@@ -58,7 +58,7 @@ const Footer = () => {
             </a>
           </div>
         </nav>
-      </footer>F
+      </footer>
     </div>
   );
 };
