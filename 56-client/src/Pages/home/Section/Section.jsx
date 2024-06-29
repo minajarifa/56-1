@@ -1,6 +1,7 @@
 import { FaTrash } from "react-icons/fa6";
 import { MdEdit } from "react-icons/md";
 import { MdOutlineSecurityUpdateGood } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Section = ({ coffee }) => {
@@ -53,9 +54,12 @@ const Section = ({ coffee }) => {
             >
               <FaTrash />
             </button>
-            <button className="btn btn-block">
-              <MdEdit />
-            </button>
+            <Link to={`/UpdatePage/${coffee._id}`}>
+              <button className="btn btn-block">
+                <MdEdit />
+              </button>
+            </Link>
+
             <button className="btn btn-block">
               <MdOutlineSecurityUpdateGood />
             </button>

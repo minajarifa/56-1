@@ -13,9 +13,7 @@ const Header = () => {
       </li><li>
         <Link to="/Addpage2">Addpage2</Link>
       </li>
-      <li>
-        <Link to="/UpdatePage">UpdatePage</Link>
-      </li>
+      
     </>
   );
   const { user, logOut } = useContext(AuthContext);
@@ -55,7 +53,7 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link to='/' className="btn btn-ghost text-xl">Coffee House</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
