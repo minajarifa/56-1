@@ -1,7 +1,8 @@
+import Swal from 'sweetalert2'
 const AddPage = () => {
-  const handleAddCoffee = (e) => {
-    e.preventDefault();
-    const form = e.target;
+  const handleAddCoffee = (event) => {
+    event.preventDefault();
+    const form = event.target;
     const name = form.name.value;
     const chef = form.chef.value;
     const supplier = form.supplier.value;
@@ -9,8 +10,23 @@ const AddPage = () => {
     const category = form.category.value;
     const details = form.details.value;
     const photo = form.photo.value;
-    const newCoffee = { name, chef, supplier, taste, category, details, photo };
-    console.log(newCoffee);
+    const coffee = { name, chef, supplier, taste, category, details, photo };
+    console.log(coffee);
+    fetch('http://localhost:5000/newCoffee',{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(coffee)
+    })
+    .then(response=>response.json())
+    .then(data=>{
+        console.log(data)
+        if(data.insertedId){
+            Swal.fire("SweetAlert2 is working!");
+        }
+    })
+
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -25,7 +41,7 @@ const AddPage = () => {
           </p>
         </div>
         <div className="card ">
-          <form className="card-body">
+          <form onSubmit={handleAddCoffee} className="card-body">
             <div className="grid md:grid-cols-2 gap-5 ">
               <div className="form-control">
                 <label className="label">
@@ -114,10 +130,10 @@ const AddPage = () => {
             </div>
             <div className="form-control mt-6">
               <button
-                onClick={handleAddCoffee}
+               
                 className="btn btn-block bg-yellow-900 btn-primary"
               >
-                Add Coffee{" "}
+                Add Coffee
               </button>
             </div>
           </form>
